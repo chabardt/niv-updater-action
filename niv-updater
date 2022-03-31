@@ -269,7 +269,8 @@ createPullRequestsOnUpdate() {
         echo "$content" >"$wdir/$SOURCES_JSON.orig"
         echo "$content" >"$wdir/$SOURCES_JSON"
         (
-            #cd "$wdir"
+            cd "$wdir"
+            ls -r "$wdir"
 
             # rewrite the entry so that we can use token instead of SSH
             if [[ -n $github_ssh ]]; then
