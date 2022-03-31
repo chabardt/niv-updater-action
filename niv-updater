@@ -62,8 +62,8 @@ setupNetrc() {
         sudo sh -c "echo 'netrc-file = $netrc' >> /etc/nix/nix.conf"
         cat <<EOF >>"$netrc"
 machine github.com
-login api
-password $GITHUB_TOKEN
+login $GITHUB_USERNAME
+password $GITHUB_PAT
 EOF
         # shellcheck disable=SC2064
         trap "rm -f '$netrc'" EXIT
